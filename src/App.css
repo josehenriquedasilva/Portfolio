@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@keyframes animacao-rolagem {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-33.3333%);
+    }
+}
+
+.animacao-rolagem-stacks {
+    animation: animacao-rolagem 25s linear infinite;
+    width: fit-content;
+}
