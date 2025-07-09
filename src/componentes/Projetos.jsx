@@ -1,14 +1,5 @@
 import { IoArrowForward } from "react-icons/io5";
 import { FiGithub } from "react-icons/fi";
-import DivProjeto from "./DivProjeto";
-import DivInfoProjeto from "./DivInfoProjeto";
-import TituloProjeto from "./TituloProjeto";
-import DescricaoProjeto from "./DescricaoProjeto";
-import DivStacks from "./DivStacks";
-import Stack from "./Stack";
-import DivBotoes from "./DivBotoes";
-import BotaoProjeto from "./BotaoProjeto";
-import GitHubProjeto from "./GitHubProjeto";
 
 const projetos = [
   {
@@ -34,7 +25,7 @@ const projetos = [
   },
   {
     titulo: "Galeria",
-    descricao: 'Uma "Galeria Online" onde você consegue armazenar imagens com a "URL" da imagem ou "escolher o arquivo". Ela armazenas as imagens no navegador, permitindo você recarregar a página sem as imagens sairem!',
+    descricao: 'Uma "Galeria Online" onde você consegue armazenar imagens com a "URL" da imagem ou "importar o arquivo". Com a o método "Drag and Drop" permite que você mude a ordem que as imagens estão organizadas!' ,
     stacks: ["React", "Tailwind", "React-Hooks", "React.Icons"],
     linkProjeto: "https://galeria-lemon-nine.vercel.app/",
     GithubProjeto: "https://github.com/josehenriquedasilva/Galeria"
@@ -65,32 +56,24 @@ function Projetos() {
         <div className="w-20 h-1 bg-green-500 mx-auto mb-12"></div>
         <section className="flex flex-wrap justify-center items-center gap-8">
           {projetos.map((projeto, idx) => (
-            <DivProjeto key={idx}>
-            <DivInfoProjeto>
-              <TituloProjeto>{projeto.titulo}</TituloProjeto>
-              <DescricaoProjeto>{projeto.descricao}</DescricaoProjeto>
-              <DivStacks>
-                {projeto.stacks.map((stack, i) => (
-                  <Stack key={i}>{stack}</Stack>
-                ))}
-              </DivStacks>
-              <DivBotoes>
-                <BotaoProjeto
-                  target="_blank"
-                  href={projeto.linkProjeto}
-                >
-                  Ver Projeto{" "}
-                  <IoArrowForward className="ml-3 group-hover:ml-4 duration-200" />
-                </BotaoProjeto>
-                <GitHubProjeto
-                  target="_blank"
-                  href={projeto.GithubProjeto}
-                >
-                  <FiGithub className="size-5" />
-                </GitHubProjeto>
-              </DivBotoes>
-            </DivInfoProjeto>
-          </DivProjeto>
+            <div key={idx} className="bg-[#111111] md:h-[320px] rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-500 ease-in-out shadow-lg hover:shadow-[#0ACC6C]/20 group w-130 md:w-[47.7%] lg:w-[31.1%]">
+              <div className="p-6 flex flex-col justify-between h-full">
+                <h3 className="text-xl font-bold text-white mb-2">{projeto.titulo}</h3>
+                <p className="text-gray-400 text-sm mb-4 md:h-30">{projeto.descricao}</p>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {projeto.stacks.map((stack, i) => (
+                    <p key={i} className="bg-[#1d1d1d] text-[#0ACC6C] text-xs font-mono px-2 py-1 rounded-full">{stack}</p>
+                  ))}
+                </div>
+
+                <div className="mt-auto flex justify-between items-center">
+                  <a target="_blank" href={projeto.linkProjeto} className="text-[#0ACC6C] font-semibold inline-flex items-center group-hover:text-white transition-colors duration-300">Ver Projeto <IoArrowForward className="ml-3 group-hover:ml-4 duration-200"/></a>
+
+                  <a target="_blank" href={projeto.GithubProjeto} className="text-gray-500 hover:text-[#0ACC6C] transition-colcontainer ors duration-300"><FiGithub className="size-5"/></a>
+                </div>
+              </div>
+            </div>
           ))}
         </section>
       </div>
