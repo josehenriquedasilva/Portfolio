@@ -11,10 +11,11 @@ import { TbBrandJavascript } from "react-icons/tb";
 import { IoLogoHtml5 } from "react-icons/io5";
 import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoReact } from "react-icons/io5";
-import { SiTailwindcss } from "react-icons/si";
-import { BiLogoPhp } from "react-icons/bi";
-import { IoMenu } from "react-icons/io5";
+import { SiPrisma, SiTailwindcss, SiTypescript } from "react-icons/si";
+
 import { useState } from "react";
+import { RiNextjsFill } from "react-icons/ri";
+import { BiLogoPostgresql } from "react-icons/bi";
 
 function App() {
   const stacks = [
@@ -31,6 +32,10 @@ function App() {
       logo: <TbBrandJavascript className="size-15 text-amber-300" />,
     },
     {
+      tec: "TypeScript",
+      logo: <SiTypescript className="size-15 text-[#377CC8]" />,
+    },
+    {
       tec: "React",
       logo: <IoLogoReact className="size-15 text-blue-300" />,
     },
@@ -39,8 +44,16 @@ function App() {
       logo: <SiTailwindcss className="size-15 text-blue-500" />,
     },
     {
-      tec: "PHP",
-      logo: <BiLogoPhp className="size-15 text-blue-200" />,
+      tec: "Next.js",
+      logo: <RiNextjsFill className="size-15 text-white" />,
+    },
+    {
+      tec: "Prisma ORM",
+      logo: <SiPrisma className="size-15 text-[#194055]" />,
+    },
+    {
+      tec: "PostgreSQL",
+      logo: <BiLogoPostgresql className="size-15 text-[#396C94]" />,
     },
   ];
 
@@ -166,7 +179,7 @@ function App() {
               transition={{ duration: 0.8 }}
               className="text-xl md:text-2xl font-mono mt-4 text-green-500"
             >
-              &lt;Desenvolvedor Front-End /&gt;
+              &lt;Desenvolvedor Full-Stack /&gt;
             </motion.p>
           </div>
           <LuChevronsDown className="text-gray-400 animate-bounce size-9 bottom-10 absolute" />
